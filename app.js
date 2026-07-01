@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "development") {
 };
 
 // Handlebars
-app.engine('.hbs', exphbs({
+app.engine('.hbs', exphbs.engine({
     defaultLayout: 'main', 
     extname: '.hbs'
 }));
