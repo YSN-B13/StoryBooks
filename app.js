@@ -28,7 +28,6 @@ app.use(
         secret: 'keyboard cat',
         resave: false,
         saveUninitialized: false,
-        store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
     }),
 );
 
@@ -53,6 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use("/", require("./routes/index"));
+app.use("/auth", require("./routes/auth"));
 
 const PORT = process.env.PORT || 3000;
 
